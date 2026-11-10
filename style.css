@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f6f4;
+    color: #26332c;
+    line-height: 1.6;
+}
+.container {
+    width: min(1150px, calc(100% - 32px));
+    margin: 35px auto;
+}
+/* Заголовок */
+.page-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.page-header h1 {
+    color: #245b3c;
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+.page-header p {
+    color: #647168;
+}
+/* Разделы страницы */
+section {
+    background-color: #ffffff;
+    border: 1px solid #e1e9e3;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 14px rgba(31, 61, 42, 0.06);
+}
+h2 {
+    color: #245b3c;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+/* Поля формы */
+.form-group {
+    margin-bottom: 18px;
+}
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #34483a;
+}
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    display: block;
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd7ce;
+    border-radius: 7px;
+    background-color: #ffffff;
+    color: #26332c;
+    font-size: 15px;
+    font-family: inherit;
+}
+textarea {
+    min-height: 105px;
+    resize: vertical;
+}
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #398457;
+    box-shadow: 0 0 0 3px rgba(57, 132, 87, 0.13);
+}
+/* Кнопки */
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 11px 18px;
+    background-color: #2f754b;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+button:hover {
+    background-color: #245d3b;
+}
+.add-button {
+    margin-top: 5px;
+}
+/* Кнопка удаления */
+.delete-button {
+    background-color: #c0392b;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+.delete-button:hover {
+    background-color: #922b21;
+}
+/* Сообщения об успехе и ошибках */
+.success-message,
+.error-message {
+    padding: 13px 16px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+.success-message {
+    color: #205b35;
+    background-color: #e8f5eb;
+    border: 1px solid #b9dfc3;
+}
+.error-message {
+    color: #922f2f;
+    background-color: #fff0f0;
+    border: 1px solid #efc4c4;
+}
+.field-error {
+    color: #c0392b;
+    font-size: 14px;
+    margin-top: 5px;
+}
+/* Поиск рецептов */
+.search-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.search-form input {
+    flex: 1;
+    min-width: 200px;
+}
+.reset-button {
+    display: inline-block;
+    padding: 11px 17px;
+    background-color: #777777;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+}
+.reset-button:hover {
+    background-color: #555555;
+}
+/* Сортировка */
+.sort-form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.sort-form label {
+    margin-bottom: 0;
+}
+.sort-form select {
+    width: auto;
+    min-width: 160px;
+}
+/* Таблица рецептов */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e0e7e1;
+    border-radius: 8px;
+}
+table {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+th,
+td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e5ebe6;
+    text-align: left;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+}
+th {
+    background-color: #eaf2ec;
+    color: #28583a;
+    font-weight: bold;
+}
+tbody tr:nth-child(even) {
+    background-color: #f8faf8;
+}
+tbody tr:hover {
+    background-color: #f0f6f1;
+}
+tbody tr:last-child td {
+    border-bottom: none;
+}
+/* Сообщение об отсутствии рецептов */
+.empty-message {
+    color: #777777;
+    text-align: center;
+    padding: 20px;
+}
+/* Количество рецептов */
+.total-count {
+    margin-top: 18px;
+    color: #536258;
+    font-weight: bold;
+}
+/* Нижняя часть страницы */
+footer {
+    text-align: center;
+    color: #777777;
+    padding: 20px;
+    margin-top: 20px;
+}
+/* Адаптация для телефонов */
+@media (max-width: 650px) {
+    .container {
+        width: calc(100% - 20px);
+        margin: 15px auto;
+    }
+    section {
+        padding: 17px;
+    }
+    .page-header h1 {
+        font-size: 26px;
+    }
+    .sort-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+    .sort-form select,
+    .sort-form button {
+        width: 100%;
+    }
+    .search-form {
+        flex-direction: column;
+    }
+    .search-form button,
+    .reset-button {
+        text-align: center;
+        width: 100%;
+    }
+}
